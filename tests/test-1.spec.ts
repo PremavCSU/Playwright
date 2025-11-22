@@ -1,20 +1,7 @@
 import { test, expect } from '@playwright/test';
 
-test('Amazon phone search', async ({ page }) => {
-  test.setTimeout(60000);
-  
-  await page.goto('https://amazon.com');
-  
-  const searchBox = page.getByRole('searchbox', { name: 'Search Amazon' });
-  await searchBox.fill('phone');
-  await searchBox.press('Enter');
-  //await page.getByRole('textbox', { name: 'Search For' }).click();
-  await page.getByRole('textbox', { name: 'Search For' }).fill('laptop');
-  await page.getByRole('textbox', { name: 'Search For' }).press('Enter');
-  await page.getByRole('button', { name: 'Go' }).click();
-  await page.getByRole('link', { name: 'Microsoft Surface Laptop (' }).first().click();
-  //await page.waitForLoadState('networkidle');
-  await page.getByRole('link', { name: 'SAMSUNG Galaxy S25 Ultra' }).first().click();
+test('test', async ({ page }) => {
+  await page.goto('https://www.amazon.com/');
   await page.getByRole('textbox', { name: 'Search For' }).click();
   await page.getByRole('textbox', { name: 'Search For' }).fill('laptop');
   await page.getByRole('textbox', { name: 'Search For' }).press('Enter');
@@ -32,4 +19,4 @@ test('Amazon phone search', async ({ page }) => {
   await page.getByRole('link', { name: 'Apply 44 to 49 Inches filter' }).click();
   await page.getByRole('link', { name: 'Apply New filter to narrow' }).click();
   await page.getByRole('link', { name: 'Hisense 50" Class A7 Series (' }).click();
-})
+});

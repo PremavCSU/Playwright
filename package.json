@@ -1,14 +1,12 @@
 {
-  "name": "typescript",
+  "name": "playwright-mcp",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {},
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "@playwright/test": "^1.56.1",
-    "@types/node": "^24.10.1"
+  "type": "module",
+  "scripts": {
+    "mcp-server": "node mcp-server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.4.0",
+    "@playwright/test": "^1.40.0"
   }
 }
