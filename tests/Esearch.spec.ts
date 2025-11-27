@@ -24,8 +24,8 @@ test('Amazon Electronics items search', async ({ page }) => {
   //await page.getByRole('link', { name: 'Sponsored Ad - 15.6\'\' IPS FHD' }).click();
   await page.goto('https://www.amazon.com/FHD-Laptop-i5-1135G7-Computer-Warranty-Fingerprint/dp/B0FXM28CK7/ref=sr_1_1_sspa?crid=23CQ271JMQ1QV&dib=eyJ2IjoiMSJ9.HQntUDl3-aPkMjwfefcVP75APu7bMuaeVD96FMI_DAD75s6Ab3kjeyhgIf14aafDCGpJgCDL9FSR06h6NSHcIacBHr4C2d6mw21sip6AZdDl5Iy0cChdtvYEJ_C7W9UX7wBnTC14Yje7prI8NAJxM70fvULF_7n_Ghnk2IfFGO6U6CLaNsPsMch-5ViMriZN0ZPZEUTwxZ-KInEKUk9symfjrvGkjrvnbXB2JTD1qjk.LUW4A-ok3_fEHzl_wq0zKgOPjYHhGxMDLEDjU1fw8nk&dib_tag=se&keywords=Laptop&qid=1763772984&sprefix=laptop%2Caps%2C802&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1');
   await page.getByRole('radio', { name: 'Gray $499.99 with 50 percent' }).click();
-  await page.getByRole('radio', { name: 'Red $499.99 with 50 percent' }).click();
+  //await page.getByRole('radio', { name: 'Red $499.99 with 50 percent' }).click();
   //await page.getByRole('link', { name: 'items in cart' }).click();
   //await page.getByRole('link', { name: 'Returns & Orders' }).click();
-  await page.getByRole('link', { name: 'Amazon', exact: true }).click();
+  //await page.getByRole('link', { name: 'Amazon', exact: true }).click();
 });
