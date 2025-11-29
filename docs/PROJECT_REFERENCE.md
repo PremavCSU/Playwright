@@ -29,12 +29,24 @@ Playwright/
 │   ├── reviews.spec.ts        # Product reviews
 │   ├── account.spec.ts        # Account menu
 │   ├── prime.spec.ts          # Prime membership
-│   └── deals.spec.ts          # Deals page
+│   ├── deals.spec.ts          # Deals page
+│   ├── example.spec.ts        # Example test template
+│   ├── test-1.spec.ts         # Additional test file
+│   └── test.py                # Python test file
 ├── docs/                      # Documentation
-├── playwright.config.ts       # Playwright configuration
-├── mcp-server.js             # MCP server implementation
-├── package.json              # Dependencies and scripts
-└── README.md                 # Project overview
+│   ├── API_REFERENCE.md
+│   ├── CONFIGURATION_REFERENCE.md
+│   ├── INTEGRATION_WORKFLOW.md
+│   ├── MCP_INTEGRATION.md
+│   ├── TESTING_GUIDE.md
+│   └── TROUBLESHOOTING_REFERENCE.md
+├── playwright-report/         # HTML test reports
+├── test-results/             # Test execution results
+├── .amazonq/                 # Amazon Q configuration
+├── playwright.config.ts      # Playwright configuration
+├── mcp-server.js            # MCP server implementation
+├── package.json             # Dependencies and scripts
+└── README.md                # Project overview
 ```
 
 ## Test Files Reference
@@ -65,16 +77,15 @@ Playwright/
 
 ### playwright.config.ts
 ```typescript
-// Test configuration with 60s timeout
-// Chromium browser (default)
-// Network idle wait strategy
+// Multiple browser support: Chromium, Firefox, WebKit
+// Parallel test execution enabled
+// HTML reporter with trace collection
+// CI/CD optimized settings
 ```
 
 ### package.json Scripts
 ```json
 {
-  "test": "npx playwright test",
-  "test:ui": "npx playwright test --ui",
   "mcp-server": "node mcp-server.js"
 }
 ```
@@ -264,8 +275,8 @@ await page.waitForLoadState('networkidle');
 ### Core Dependencies
 ```json
 {
-  "@playwright/test": "^1.x.x",
-  "@modelcontextprotocol/sdk": "^1.x.x"
+  "@playwright/test": "^1.40.0",
+  "@modelcontextprotocol/sdk": "^0.4.0"
 }
 ```
 

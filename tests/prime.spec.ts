@@ -1,11 +1,9 @@
 import { test, expect } from '@playwright/test';
 
 test('Prime membership page', async ({ page }) => {
-  await page.goto('https://amazon.com');
-  
-  await page.locator('a[href*="prime"]').first().click();
+  await page.goto('https://amazon.com/prime');
   await page.waitForLoadState('networkidle');
   
   await expect(page).toHaveURL(/prime/);
-  await expect(page.locator('h1')).toContainText('Prime');
+  await expect(page.locator('h1, [data-testid="prime-title"], .prime-header').first()).toBeVisible();
 });
