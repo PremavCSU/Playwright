@@ -21,10 +21,12 @@ npx playwright test --ui
 ```
 
 ## Test Files
-- `search.spec.ts` - Amazon search functionality tests
-- `amazon-search.spec.ts` - TV search test
-- `optimized-search.spec.ts` - Optimized multi-product search
-- `Esearch.spec.ts` - Electronics items search test
+- `search.spec.ts` - Amazon search functionality with Page Object Model
+- `amazon-search.spec.ts` - Simple TV search test
+- `optimized-search.spec.ts` - Optimized multi-product search with helper functions
+- `Esearch.spec.ts` - Electronics items comprehensive search test
+- `example.spec.ts` - Playwright example test
+- `test-1.spec.ts` - Additional test file
 
 ## MCP Server Integration
 
@@ -66,12 +68,23 @@ taskkill /PID <PID> /F
 ## Configuration
 - `playwright.config.ts` - Test configuration
 - `mcp-server.js` - MCP server implementation
-- Timeout: 60 seconds per test
-- Browser: Chromium (default)
+- Multiple browser support: Chromium, Firefox, WebKit
+- Parallel test execution enabled
+- HTML reporter with trace collection
+- CI/CD optimized settings
+
+## Documentation
+Comprehensive documentation available in `/docs` folder:
+- `PROJECT_REFERENCE.md` - Complete project structure and file descriptions
 
 ## Dependencies
-- `@playwright/test` - Testing framework
-- `@modelcontextprotocol/sdk` - MCP integration
+- `@playwright/test` ^1.40.0 - Testing framework
+- `@modelcontextprotocol/sdk` ^0.4.0 - MCP integration
+
+## Reports
+- HTML reports generated in `playwright-report/`
+- Test results and traces in `test-results/`
+- View reports: `npx playwright show-report`
 
 ## Best Practices
 - Use reliable selectors (IDs over roles)
