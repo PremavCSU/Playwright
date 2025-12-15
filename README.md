@@ -9,6 +9,8 @@ npm install
 ```
 
 ## Running Tests
+
+### Playwright Tests (TypeScript)
 ```bash
 # Run all tests
 npx playwright test
@@ -20,13 +22,61 @@ npx playwright test tests/search.spec.ts
 npx playwright test --ui
 ```
 
+### Pytest Tests (Python)
+```bash
+# Install Python dependencies
+pip install -r requirements.txt
+
+# Install Playwright browsers
+playwright install
+
+# Run all pytest tests
+python -m pytest pytest_tests/ -v
+
+# Run specific test
+python -m pytest pytest_tests/test_search.py -v
+
+# Run with HTML report
+python -m pytest pytest_tests/ --html=pytest_reports/report.html
+
+# Run using the runner script
+python pytest_tests/run_tests.py
+python pytest_tests/run_tests.py search
+```
+
 ## Test Files
-- `search.spec.ts` - Amazon search functionality with Page Object Model
-- `amazon-search.spec.ts` - Simple TV search test
-- `optimized-search.spec.ts` - Optimized multi-product search with helper functions
-- `Esearch.spec.ts` - Electronics items comprehensive search test
-- `example.spec.ts` - Playwright example test
-- `test-1.spec.ts` - Additional test file
+
+### Playwright Tests (TypeScript)
+- `search.spec.ts` - Amazon search functionality tests
+- `amazon-search.spec.ts` - TV search test
+- `optimized-search.spec.ts` - Optimized multi-product search
+- `Esearch.spec.ts` - Electronics items search test
+- `account.spec.ts` - User account functionality tests
+- `cart.spec.ts` - Shopping cart operations
+- `deals.spec.ts` - Deals and promotions testing
+- `filters.spec.ts` - Product filtering functionality
+- `navigation.spec.ts` - Site navigation tests
+- `prime.spec.ts` - Amazon Prime features
+- `product-details.spec.ts` - Product page testing
+- `reviews.spec.ts` - Product reviews functionality
+- `sorting.spec.ts` - Product sorting options
+- `wishlist.spec.ts` - Wishlist functionality
+
+### Pytest Tests (Python)
+- `test_search.py` - Amazon search functionality tests
+- `test_amazon_search.py` - TV search test
+- `test_optimized_search.py` - Optimized multi-product search
+- `test_esearch.py` - Electronics items search test
+- `test_account.py` - User account functionality tests
+- `test_cart.py` - Shopping cart operations
+- `test_deals.py` - Deals and promotions testing
+- `test_filters.py` - Product filtering functionality
+- `test_navigation.py` - Site navigation tests
+- `test_prime.py` - Amazon Prime features
+- `test_product_details.py` - Product page testing
+- `test_reviews.py` - Product reviews functionality
+- `test_sorting.py` - Product sorting options
+- `test_wishlist.py` - Wishlist functionality
 
 ## MCP Server Integration
 
@@ -82,9 +132,15 @@ Comprehensive documentation available in `/docs` folder:
 - `@modelcontextprotocol/sdk` ^0.4.0 - MCP integration
 
 ## Reports
+
+### Playwright Reports
 - HTML reports generated in `playwright-report/`
 - Test results and traces in `test-results/`
 - View reports: `npx playwright show-report`
+
+### Pytest Reports
+- HTML reports generated in `pytest_reports/`
+- View reports: Open `pytest_reports/report.html` in browser
 
 ## Best Practices
 - Use reliable selectors (IDs over roles)
