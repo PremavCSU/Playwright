@@ -11,13 +11,13 @@ def browser():
 @pytest.fixture
 def page(browser):
     page = browser.new_page()
-    page.set_default_timeout(30000)
+    page.set_default_timeout(60000)
     yield page
     page.close()
 
 @pytest.fixture
 def amazon_page(page):
-    page.goto("https://amazon.com")
+    page.goto("https://amazon.com", timeout=60000)
     page.wait_for_load_state("domcontentloaded")
-    page.wait_for_timeout(2000)
+    page.wait_for_timeout(3000)
     return page

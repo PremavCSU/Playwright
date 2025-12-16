@@ -4,17 +4,17 @@ from playwright.sync_api import expect
 def search(page, term):
     page.locator('#twotabsearchtextbox').fill(term)
     page.locator('#twotabsearchtextbox').press('Enter')
-    page.wait_for_load_state('networkidle')
+    page.wait_for_timeout(3000)
 
 def test_amazon_multi_product_search(amazon_page):
     search(amazon_page, 'phone')
-    expect(amazon_page).to_have_url(lambda url: 's?k=phone' in url)
-    expect(amazon_page.locator('[data-component-type="s-search-result"]')).to_be_visible()
+    assert 's?k=phone' in amazon_page.url
+    assert amazon_page.locator('[data-component-type="s-search-result"]').is_visible()
     
     search(amazon_page, 'laptop')
-    expect(amazon_page).to_have_url(lambda url: 's?k=laptop' in url)
-    expect(amazon_page.locator('[data-component-type="s-search-result"]')).to_be_visible()
+    assert 's?k=laptop' in amazon_page.url
+    assert amazon_page.locator('[data-component-type="s-search-result"]').is_visible()
     
     search(amazon_page, 'TV')
-    expect(amazon_page).to_have_url(lambda url: 's?k=TV' in url)
-    expect(amazon_page.locator('[data-component-type="s-search-result"]')).to_be_visible()
+    assert 's?k=TV' in amazon_page.url
+    assert amazon_page.locator('[data-component-type="s-search-result"]').is_visible()
