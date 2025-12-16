@@ -5,10 +5,10 @@ test('Add item to cart', async ({ page }) => {
   
   await page.locator('#twotabsearchtextbox').fill('wireless mouse');
   await page.locator('#twotabsearchtextbox').press('Enter');
-  await page.waitForLoadState('networkidle');
+  await page.waitForTimeout(3000);
   
   await page.locator('[data-component-type="s-search-result"]').first().click();
-  await page.waitForLoadState('networkidle');
+  await page.waitForTimeout(3000);
   
   const addToCartButton = page.locator('#add-to-cart-button, input[name="submit.add-to-cart"]').first();
   if (await addToCartButton.isVisible()) {

@@ -3,7 +3,7 @@ import { test, expect, Page } from '@playwright/test';
 const search = async (page: Page, term: string) => {
   await page.locator('#twotabsearchtextbox').fill(term);
   await page.locator('#twotabsearchtextbox').press('Enter');
-  await page.waitForLoadState('networkidle');
+  await page.waitForTimeout(3000);
 };
 
 test('Amazon multi-product search', async ({ page }) => {

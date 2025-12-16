@@ -9,10 +9,11 @@ test('Navigate through categories', async ({ page }) => {
   const electronicsLink = page.locator('a[href*="electronics"], a:has-text("Electronics")').first();
   if (await electronicsLink.isVisible()) {
     await electronicsLink.click();
-    await page.waitForLoadState('networkidle');
+    await page.waitForTimeout(3000);
     await expect(page).toHaveURL(/electronics/);
   } else {
     await page.goto('https://amazon.com/electronics');
+    await page.waitForTimeout(3000);
   }
   
   await expect(page.locator('h1, [data-testid="page-title"]').first()).toBeVisible();
